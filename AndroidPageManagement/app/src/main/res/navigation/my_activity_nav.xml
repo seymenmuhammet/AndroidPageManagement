@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_activity_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.androidpagemanagement.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/goPageA"
+            app:destination="@id/pageAFragment" />
+        <action
+            android:id="@+id/goPageX"
+            app:destination="@id/pageXFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageAFragment"
+        android:name="com.example.androidpagemanagement.PageAFragment"
+        android:label="fragment_page_a"
+        tools:layout="@layout/fragment_page_a" >
+        <action
+            android:id="@+id/goPageB"
+            app:destination="@id/pageBFragment"
+            app:popUpTo="@id/pageAFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageBFragment"
+        android:name="com.example.androidpagemanagement.PageBFragment"
+        android:label="fragment_page_b"
+        tools:layout="@layout/fragment_page_b" >
+        <action
+            android:id="@+id/goPageY1"
+            app:destination="@id/pageYFragment"
+            app:popUpTo="@id/pageBFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageXFragment"
+        android:name="com.example.androidpagemanagement.PageXFragment"
+        android:label="fragment_page_x"
+        tools:layout="@layout/fragment_page_x" >
+        <action
+            android:id="@+id/goPageY2"
+            app:destination="@id/pageYFragment"
+            app:popUpTo="@id/pageXFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageYFragment"
+        android:name="com.example.androidpagemanagement.PageYFragment"
+        android:label="fragment_page_y"
+        tools:layout="@layout/fragment_page_y" >
+        <action
+            android:id="@+id/goPageHome"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+</navigation>
